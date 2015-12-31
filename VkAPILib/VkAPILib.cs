@@ -93,7 +93,10 @@ namespace VkAPILib
 
         public static string ApiVer { get; private set; } = string.Empty;
 
-        
+        public static void GetHistoryWith(string userId)
+        {
+            
+        }
 
     }
 }
