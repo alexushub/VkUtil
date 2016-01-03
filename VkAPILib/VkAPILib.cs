@@ -1,9 +1,13 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Configuration;
+using System.IO;
+using System.Net;
+using System.Web.Helpers;
 
 namespace VkAPILib
 {
@@ -95,8 +99,55 @@ namespace VkAPILib
 
         public static void GetHistoryWith(string userId)
         {
-            
+            var req = HttpWebRequest.Create($"https://api.vk.com/method/audio.get?owner_id={UserId}&count=20&v={ApiVer}&access_token={AccessToken}");
+            req.Method = WebRequestMethods.Http.Get;
+            var resp = req.GetResponse();
+            var reader = new StreamReader(resp.GetResponseStream());
+            var json = reader.ReadToEnd();
+
+            dynamic data = Json.Decode(json);
+
+            var a = data.Fuck;
         }
 
+        public static List<AudioRecord> SearchAudios(string searchStr)
+        {
+            var req = HttpWebRequest.Create($"https://api.vk.com/method/audio.search?q={searchStr}&sort=2&count=20&v={ApiVer}&access_token={AccessToken}");
+            req.Method = WebRequestMethods.Http.Get;
+            var resp = req.GetResponse();
+            var reader = new StreamReader(resp.GetResponseStream());
+            var json = reader.ReadToEnd();
+
+            dynamic data = Json.Decode(json);
+            IEnumerable<dynamic> its = data.response.items;
+
+            var ret = new List<AudioRecord>();
+
+            foreach (var it in its)
+            {
+                string tit = (it.artist + " - " + it.title).ToString();
+                ret.Add(new AudioRecord()
+                {
+                    Title = tit.Length > 50 ? tit.Substring(0, 50) : tit,
+                    Url = new Uri(it.url)
+                });
+            }
+
+            return ret;
+        }
+
+        public class AudioRecord
+        {
+            public string Title { get; set; }
+
+            public Uri Url { get; set; }
+        }
+
+        //public class AudioRecords
+        //{
+        //    int Count { get; set; }
+
+        //    private List<AudioRecord> Audios { get; set; } = new List<AudioRecord>();
+        //}
     }
 }

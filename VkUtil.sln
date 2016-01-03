@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VkAPILib", "VkAPILib\VkAPILib.csproj", "{3EF39EE5-B624-4886-ACDD-68C080BD89DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VkUtil", "VKUtil\VkUtil.csproj", "{A94A80FE-4C7D-4AC9-A436-48B0E5ADA060}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VkUtilOld", "VKUtilOld\VkUtilOld.csproj", "{A94A80FE-4C7D-4AC9-A436-48B0E5ADA060}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VkUtil", "VkUtil\VkUtil.csproj", "{0B3317F8-C1E3-445C-8E32-076E72C006F8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{A94A80FE-4C7D-4AC9-A436-48B0E5ADA060}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A94A80FE-4C7D-4AC9-A436-48B0E5ADA060}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A94A80FE-4C7D-4AC9-A436-48B0E5ADA060}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B3317F8-C1E3-445C-8E32-076E72C006F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B3317F8-C1E3-445C-8E32-076E72C006F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B3317F8-C1E3-445C-8E32-076E72C006F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B3317F8-C1E3-445C-8E32-076E72C006F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
