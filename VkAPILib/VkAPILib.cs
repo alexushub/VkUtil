@@ -123,12 +123,12 @@ namespace VkAPILib
 
             var ret = new List<AudioRecord>();
 
-            foreach (var it in its)
+            foreach (var it in its.Where(m => !string.IsNullOrEmpty(m.url)))
             {
                 string tit = (it.artist + " - " + it.title).ToString();
                 ret.Add(new AudioRecord()
                 {
-                    Title = tit.Length > 50 ? tit.Substring(0, 50) : tit,
+                    Title = tit, //tit.Length > 50 ? tit.Substring(0, 50) : tit,
                     Url = new Uri(it.url)
                 });
             }

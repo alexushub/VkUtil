@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VkUtil"
         mc:Ignorable="d"
-        Title="VkUtil" Height="350" Width="525">
+        Title="VkUtil" Height="350" Width="525" ResizeMode="NoResize">
     <Grid Loaded="Grid_Loaded">
-        <Button x:Name="audioDownloadbButton" Content="Download audio" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="137" Click="audioDownloadbButton_Click"/>
+        <Button x:Name="audioDownloadbButton" Content="Download audio" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="497" Click="audioDownloadbButton_Click" Height="300"/>
     </Grid>
 </Window>

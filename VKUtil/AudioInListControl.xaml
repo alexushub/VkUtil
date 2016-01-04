@@ -4,11 +4,15 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:VkUtil"
-             mc:Ignorable="d" Width="370" Height="26">
+             mc:Ignorable="d" Width="560" Height="26">
     <Grid>
         <WrapPanel HorizontalAlignment="Stretch">
-            <Label x:Name="audioName" Content="{Binding Path=Title}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="290" Height="26"/>
-            <Button x:Name="downloadButton" Content="Download" HorizontalAlignment="Right" VerticalAlignment="Top" Width="75" Height="26"/>
+            <Label x:Name="audioName" HorizontalAlignment="Left" VerticalAlignment="Top" Width="341" Height="26">
+                <Binding Path="Title"></Binding>
+            </Label>
+            <ProgressBar x:Name="downloadProgressBar" Height="26" Width="100"/>
+            <Button x:Name="downloadButton" Content="Download" HorizontalAlignment="Right" VerticalAlignment="Top" Width="64" Height="26" TabIndex="1" Click="downloadButton_Click"/>
+            <Button x:Name="cancelDownloadButton" Content="Cancel" Width="44" Click="cancelDownloadButton_Click" IsEnabled="False"/>
         </WrapPanel>
     </Grid>
 </UserControl>

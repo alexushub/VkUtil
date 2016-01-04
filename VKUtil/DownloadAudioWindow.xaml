@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VkUtil"
         mc:Ignorable="d"
-        Title="Download audio" Height="383.495" Width="423.3">
+        Title="Download audio" Height="414.495" Width="603" Loaded="Window_Loaded" ResizeMode="NoResize">
     <Grid x:Name="downLoadAudioWindow">
-        <TextBox x:Name="searchTextBox" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="299"/>
-        <Button x:Name="searchButton" Content="Search" HorizontalAlignment="Left" Margin="314,10,0,0" VerticalAlignment="Top" Width="91" RenderTransformOrigin="-0.109,0.967" Click="searchButton_Click"/>
-        <ListBox x:Name="audioListBox" HorizontalAlignment="Left" Height="194" Margin="10,38,0,0" VerticalAlignment="Top" Width="395">
+        <TextBox ForceCursor="True" x:Name="searchTextBox" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="476" TabIndex="5" FocusManager.FocusedElement="{Binding RelativeSource={RelativeSource Self}}"/>
+        <Button x:Name="searchButton" Content="Search" HorizontalAlignment="Left" Margin="491,10,0,0" VerticalAlignment="Top" Width="91" RenderTransformOrigin="-0.109,0.967" Click="searchButton_Click" TabIndex="10" IsDefault="True"/>
+        <ListBox x:Name="audioListBox" HorizontalAlignment="Left" Height="305" Margin="10,66,0,0" VerticalAlignment="Top" Width="572" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Visible">
             <ListBox.ItemTemplate>
                 <DataTemplate >
                     <WrapPanel>
@@ -18,6 +18,8 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
+        <TextBox x:Name="downloadFolderPathTextBox" HorizontalAlignment="Left" Height="23" Margin="10,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="435"/>
+        <Button x:Name="downloadPathSelectButton" Content="Select download folder" HorizontalAlignment="Left" Margin="450,39,0,0" VerticalAlignment="Top" Width="132" Click="downloadPathSelectButton_Click"/>
 
     </Grid>
 </Window>
