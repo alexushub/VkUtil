@@ -46,6 +46,11 @@ namespace VkAPILib
             {
                 ApiVer = apiVer;
             }
+
+            if (!string.IsNullOrEmpty(email))
+            {
+                Email = email;
+            }
         }
 
         private static string _accessToken;
@@ -128,7 +133,7 @@ namespace VkAPILib
                 string tit = (it.artist + " - " + it.title).ToString();
                 ret.Add(new AudioRecord()
                 {
-                    Title = tit, //tit.Length > 50 ? tit.Substring(0, 50) : tit,
+                    Title = tit,
                     Url = new Uri(it.url)
                 });
             }
@@ -142,12 +147,5 @@ namespace VkAPILib
 
             public Uri Url { get; set; }
         }
-
-        //public class AudioRecords
-        //{
-        //    int Count { get; set; }
-
-        //    private List<AudioRecord> Audios { get; set; } = new List<AudioRecord>();
-        //}
     }
 }
